@@ -4,10 +4,7 @@
  */
 package pe.tienda.animalapp.dto;
 
-/**
- *
- * @author Alumno-CT
- */
+
 public class TrabajadorDto {
     
 }

@@ -4,10 +4,7 @@
  */
 package pe.tienda.animalapp.layer.model;
 
-/**
- *
- * @author Alumno-CT
- */
+
 public class Planilla {
     public double calcularBono(Itrabajador trabajador){
         double bono = 0.0;

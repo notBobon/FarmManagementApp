@@ -19,10 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-/**
- *
- * @author AntOniO
- */
+
 public class AnimalController {
     public static final String COW_TYPE = "Cow";
     public static final String HORSE_TYPE = "Horse";

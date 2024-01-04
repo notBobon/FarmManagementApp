@@ -4,10 +4,7 @@
  */
 package pe.tienda.animalapp.layer.model;
 
-/**
- *
- * @author AntOniO
- */
+
 public abstract class Animal {
     public abstract double calcularTotal(int total);
     public double precioUnidad;

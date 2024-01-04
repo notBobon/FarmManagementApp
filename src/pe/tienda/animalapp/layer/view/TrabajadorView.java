@@ -15,10 +15,6 @@ import pe.tienda.animalapp.controller.AnimalController;
 import pe.tienda.animalapp.controller.TrabajadorController;
 import pe.tienda.animalapp.gravatar.MD5Util;
 
-/**
- *
- * @author Alumno-CT
- */
 public class TrabajadorView extends javax.swing.JFrame {
     DefaultTableModel tabla;
     /**

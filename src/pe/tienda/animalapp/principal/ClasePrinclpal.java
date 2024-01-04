@@ -7,10 +7,6 @@ package pe.tienda.animalapp.principal;
 import javax.swing.JOptionPane;
 import pe.tienda.animalapp.layer.view.TrabajadorView;
 
-/**
- *
- * @author Alumno-CT
- */
 public class ClasePrinclpal {
 
     /**

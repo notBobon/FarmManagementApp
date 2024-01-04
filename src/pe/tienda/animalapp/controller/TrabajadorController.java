@@ -11,10 +11,7 @@ import pe.tienda.animalapp.layer.model.Empleado;
 import pe.tienda.animalapp.layer.model.Itrabajador;
 import pe.tienda.animalapp.layer.model.Planilla;
 
-/**
- *
- * @author Alumno-CT
- */
+
 public class TrabajadorController {
     public static final String TIPO_EMPLEADO ="EMPLEADO";
     public static final String TIPO_DOCENTE = "DOCENTE";

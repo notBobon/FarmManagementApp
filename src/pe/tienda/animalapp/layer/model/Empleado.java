@@ -4,10 +4,7 @@
  */
 package pe.tienda.animalapp.layer.model;
 
-/**
- *
- * @author Alumno-CT
- */
+
 public class Empleado implements Itrabajador{
     private String cargo;
 

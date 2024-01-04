@@ -4,10 +4,7 @@
  */
 package pe.tienda.animalapp.layer.model;
 
-/**
- *
- * @author AntOniO
- */
+
 public class Gallina extends Animal{
 
     public Gallina() {

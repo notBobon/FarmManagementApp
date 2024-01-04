@@ -10,10 +10,7 @@ import java.util.Map;
 import javax.swing.table.DefaultTableModel;
 import pe.tienda.animalapp.controller.AnimalController;
 
-/**
- *
- * @author AntOniO
- */
+
 public class FinalizadoDiaView extends javax.swing.JDialog {
 
     /**

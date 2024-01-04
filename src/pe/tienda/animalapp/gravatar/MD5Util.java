@@ -4,10 +4,7 @@
  */
 package pe.tienda.animalapp.gravatar;
 
-/**
- *
- * @author AntOniO
- */
+
 import java.util.*;
 import java.io.*;
 import java.security.*;

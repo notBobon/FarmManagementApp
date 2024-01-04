@@ -4,10 +4,7 @@
  */
 package pe.tienda.animalapp.layer.model;
 
-/**
- *
- * @author AntOniO
- */
+
 public class Vaca extends Animal{
 
     public Vaca() {

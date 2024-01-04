@@ -13,10 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-/**
- *
- * @author AntOniO
- */
+
 public class AnimalController {
     public static final String TIPO_VACA ="Vaca";
     public static final String TIPO_CABALLO = "Caballo";

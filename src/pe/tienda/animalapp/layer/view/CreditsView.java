@@ -4,16 +4,13 @@
  */
 package pe.tienda.animalapp.layer.view;
 
-/**
- *
- * @author AntOniO
- */
-public class CreditosView extends javax.swing.JDialog {
+
+public class CreditsView extends javax.swing.JDialog {
 
     /**
-     * Creates new form CreditosView
+     * Creates new form CreditsView
      */
-    public CreditosView(java.awt.Frame parent, boolean modal) {
+    public CreditsView(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -28,26 +25,26 @@ public class CreditosView extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        txtTitulo = new javax.swing.JLabel();
-        txtTitulo1 = new javax.swing.JLabel();
-        txtTitulo2 = new javax.swing.JLabel();
+        txtTitle = new javax.swing.JLabel();
+        txtTitle1 = new javax.swing.JLabel();
+        txtTitle2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtTitulo.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
-        txtTitulo.setForeground(new java.awt.Color(0, 51, 255));
-        txtTitulo.setText("Lima, Agosto 2013");
+        txtTitle.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        txtTitle.setForeground(new java.awt.Color(0, 51, 255));
+        txtTitle.setText("Lima, Agosto 2013");
 
-        txtTitulo1.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
-        txtTitulo1.setForeground(new java.awt.Color(0, 51, 255));
-        txtTitulo1.setText("Desarrollado por: Antonio Martín Cachuán Alipázaga");
+        txtTitle1.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        txtTitle1.setForeground(new java.awt.Color(0, 51, 255));
+        txtTitle1.setText("Desarrollado por: Antonio Martín Cachuán Alipázaga");
 
-        txtTitulo2.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
-        txtTitulo2.setForeground(new java.awt.Color(0, 51, 255));
-        txtTitulo2.setText("Sistema Gestor de Venta de Animales");
+        txtTitle2.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        txtTitle2.setForeground(new java.awt.Color(0, 51, 255));
+        txtTitle2.setText("Sistema Gestor de Venta de Animales");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pe/tienda/animalapp/img/botonsalida.png"))); // NOI18N
 
@@ -58,9 +55,9 @@ public class CreditosView extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtTitulo)
-                    .addComponent(txtTitulo1)
-                    .addComponent(txtTitulo2))
+                    .addComponent(txtTitle)
+                    .addComponent(txtTitle1)
+                    .addComponent(txtTitle2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -72,11 +69,11 @@ public class CreditosView extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtTitulo2)
+                        .addComponent(txtTitle2)
                         .addGap(12, 12, 12)
-                        .addComponent(txtTitulo1)
+                        .addComponent(txtTitle1)
                         .addGap(18, 18, 18)
-                        .addComponent(txtTitulo)))
+                        .addComponent(txtTitle)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -111,20 +108,20 @@ public class CreditosView extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CreditosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreditsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CreditosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreditsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CreditosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreditsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CreditosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreditsView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                CreditosView dialog = new CreditosView(new javax.swing.JFrame(), true);
+                CreditsView dialog = new CreditsView(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -138,8 +135,8 @@ public class CreditosView extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel txtTitulo;
-    private javax.swing.JLabel txtTitulo1;
-    private javax.swing.JLabel txtTitulo2;
+    private javax.swing.JLabel txtTitle;
+    private javax.swing.JLabel txtTitle1;
+    private javax.swing.JLabel txtTitle2;
     // End of variables declaration//GEN-END:variables
 }

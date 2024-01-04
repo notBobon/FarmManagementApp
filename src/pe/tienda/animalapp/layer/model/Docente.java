@@ -4,10 +4,7 @@
  */
 package pe.tienda.animalapp.layer.model;
 
-/**
- *
- * @author Alumno-CT
- */
+
 public class Docente implements Itrabajador{
     private int horas;
 
