@@ -5,10 +5,7 @@
  */
 package Model;
 
-/**
- *
- * @author User
- */
+
 public interface IWorker {
     //Positions
     String COORDINATOR_POSITION = "COORDINATOR";

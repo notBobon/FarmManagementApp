@@ -5,10 +5,7 @@
  */
 package Model;
 
-/**
- *
- * @author User
- */
+
 public class Payroll {
     public double calculateBonus(IWorker worker) {
         double bonus = 0.0;

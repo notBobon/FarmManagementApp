@@ -5,10 +5,7 @@
  */
 package Model;
 
-/**
- *
- * @author User
- */
+
 public class Cow extends Animal {
 
     public Cow() {

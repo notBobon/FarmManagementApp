@@ -5,10 +5,7 @@
  */
 package Model;
 
-/**
- *
- * @author User
- */
+
 public class Teacher implements IWorker {
     private int hours;
 

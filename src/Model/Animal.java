@@ -5,10 +5,7 @@
  */
 package Model;
 
-/**
- *
- * @author User
- */
+
 public abstract class Animal {
     public abstract double calculateTotal(int quantity);
     public double unitPrice;
