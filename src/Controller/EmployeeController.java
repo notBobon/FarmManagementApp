@@ -7,33 +7,34 @@ package Controller;
 
 import java.util.HashMap;
 import java.util.Map;
-import pe.tienda.animalapp.layer.model.Docente;
-import pe.tienda.animalapp.layer.model.Empleado;
-import pe.tienda.animalapp.layer.model.Itrabajador;
-import pe.tienda.animalapp.layer.model.Planilla;
+import Model.Teacher;
+import Model.Employee;
+import Model.IWorker;
+import Model.Payroll;
 
 public class EmployeeController {
-    public static final String TIPO_EMPLEADO ="EMPLEADO";
-    public static final String TIPO_DOCENTE = "DOCENTE";
+    public static final String EMPLOYEE_TYPE = "EMPLOYEE";
+    public static final String TEACHER_TYPE = "TEACHER";
     
-    public String[] obtenerCargos(){
-        String[] cargos={Itrabajador.CARGO_EMPLEADO_VENTAS, Itrabajador.CARGO_JEFE_VENTAS, Itrabajador.CARGO_ASISTENTE_VENTAS};
-        return cargos;
+    public String[] getPositions(){
+        String[] positions = {IWorker.SALES_EMPLOYEE_POSITION, IWorker.SALES_MANAGER_POSITION, IWorker.SALES_ASSISTANT_POSITION};
+        return positions;
     }
     
-    public Map<String, Double> procesar(String tipo, String cargo, int horas){
-        Map<String,Double> rpta=new HashMap<String,Double>();
-        //Trabajador
-        Planilla planilla = new Planilla();
-        Itrabajador trabajador;
-        if(tipo.equals(TIPO_DOCENTE)){
-            trabajador = new Docente(horas);
+    public Map<String, Double> process(String type, String position, int hours){
+        Map<String, Double> result = new HashMap<String, Double>();
+        //Worker
+        Payroll payroll = new Payroll();
+        IWorker worker;
+        if(type.equals(TEACHER_TYPE)){
+            worker = new Teacher(hours);
         }else{
-            trabajador = new Empleado(cargo);
+            worker = new Employee(position);
         }
-        //Proceso
-        rpta.put("Sueldo", trabajador.getSueldo());
-        rpta.put("bono", planilla.calcularBono(trabajador));
-        return rpta;
+        //Process
+        result.put("Salary", worker.getSalary());
+        result.put("Bonus", payroll.calculateBonus(worker));
+        return result;
     }
 }
+

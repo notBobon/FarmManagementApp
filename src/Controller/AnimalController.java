@@ -10,19 +10,14 @@ package Controller;
  * and open the template in the editor.
  */
 
-import pe.tienda.animalapp.layer.model.Animal;
-import pe.tienda.animalapp.layer.model.Gallina;
-import pe.tienda.animalapp.layer.model.Caballo;
-import pe.tienda.animalapp.layer.model.Vaca;
-import pe.tienda.animalapp.layer.model.Pollo;
+import Model.Animal;
+import Model.Cow;
+import Model.Chicken;
+import Model.Horse;
+import Model.Rooster;
 import java.util.HashMap;
 import java.util.Map;
 
-
-/**
- *
- * @author AntOniO
- */
 public class AnimalController {
     public static final String COW_TYPE = "Cow";
     public static final String HORSE_TYPE = "Horse";
@@ -43,19 +38,19 @@ public class AnimalController {
         Animal animal = null; 
         switch (animalType){
             case HORSE_TYPE:
-                animal = new Caballo();
+                animal = new Horse();
                 SOLD_HORSE_COUNT += quantity;
                 break;
             case COW_TYPE:
-                animal = new Vaca();
+                animal = new Cow();
                 SOLD_COW_COUNT += quantity;
                 break;
             case CHICKEN_TYPE:
                 SOLD_CHICKEN_COUNT += quantity;
-                animal = new Gallina();
+                animal = new Chicken();
                 break;
             case ROOSTER_TYPE:
-                animal = new Pollo();
+                animal = new Rooster();
                 SOLD_ROOSTER_COUNT += quantity;
                 break;
             default:
@@ -69,14 +64,14 @@ public class AnimalController {
     
     public Map<String, Double> processClosingMoney(){
         Map<String, Double> totalSoles = new HashMap<String, Double>();
-        totalSoles.put("Horse", new Caballo().calculateTotal(SOLD_HORSE_COUNT));
-        totalSoles.put("Cow", new Vaca().calculateTotal(SOLD_COW_COUNT));
-        totalSoles.put("Chicken", new Gallina().calculateTotal(SOLD_CHICKEN_COUNT));
-        totalSoles.put("Rooster", new Pollo().calculateTotal(SOLD_ROOSTER_COUNT));
-        totalSoles.put("Total", new Pollo().calculateTotal(SOLD_ROOSTER_COUNT) +
-                new Gallina().calculateTotal(SOLD_CHICKEN_COUNT) +
-                new Vaca().calculateTotal(SOLD_COW_COUNT) +
-                new Caballo().calculateTotal(SOLD_HORSE_COUNT));
+        totalSoles.put("Horse", new Horse().calculateTotal(SOLD_HORSE_COUNT));
+        totalSoles.put("Cow", new Cow().calculateTotal(SOLD_COW_COUNT));
+        totalSoles.put("Chicken", new Chicken().calculateTotal(SOLD_CHICKEN_COUNT));
+        totalSoles.put("Rooster", new Rooster().calculateTotal(SOLD_ROOSTER_COUNT));
+        totalSoles.put("Total", new Rooster().calculateTotal(SOLD_ROOSTER_COUNT) +
+                new Chicken().calculateTotal(SOLD_CHICKEN_COUNT) +
+                new Cow().calculateTotal(SOLD_COW_COUNT) +
+                new Horse().calculateTotal(SOLD_HORSE_COUNT));
         return totalSoles;
     }
     
