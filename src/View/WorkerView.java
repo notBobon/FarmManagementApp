@@ -80,7 +80,7 @@ public class WorkerView extends javax.swing.JFrame {
         mniCreditos = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Sistema Gestor de Sueldos");
+        setTitle("Farm Sales Management System");
         setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -386,27 +386,26 @@ public class WorkerView extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAccess)
-                            .addComponent(lbltype7, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAccess)
+                    .addComponent(lbltype7, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap())
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                             .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(3, 3, 3)))
-                .addGap(89, 89, 89))
+                            .addGap(63, 63, 63)))))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(lbltype7)
@@ -415,10 +414,10 @@ public class WorkerView extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnAccess))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14)
-                        .addComponent(label2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(11, 11, 11)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -541,33 +540,6 @@ public class WorkerView extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnCompleteActionPerformed
 
-    private void btnAccessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccessActionPerformed
-        URL url;
-        URLConnection urlCon;
-        ImageIcon icon;
-        ImageIcon resizedIcon;
-        String email = txtemail.getText();
-        try {
-            // Hash the email address using MD5
-            String hash = MD5Util.md5Hex(email.toLowerCase());
-
-            // Construct the Gravatar URL
-            url = new URL("https://media.licdn.com/dms/image/C4E03AQFmPNfw4hL6xg/profile-displayphoto-shrink_800_800/0/1631584454672?e=2147483647&v=beta&t=lH0132bWEjsbcd3fAcjLOzsbBtVBlg4btMsHW_fUJcY" + hash);
-            urlCon = url.openConnection();
-
-            // Load the image and resize it
-            icon = new ImageIcon(url);
-            resizedIcon = new ImageIcon(icon.getImage().getScaledInstance(label2.getWidth(), label2.getHeight(), Image.SCALE_DEFAULT));
-
-            // Set the resized image as the icon for the label
-            label2.setIcon(resizedIcon);
-            label2.setText(null);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Internet connection problems");
-    }
-
-    }//GEN-LAST:event_btnAccessActionPerformed
-
     private void mniCreditosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniCreditosActionPerformed
         // TODO add your handling code here:
         try {
@@ -586,6 +558,32 @@ public class WorkerView extends javax.swing.JFrame {
     private void rbnroosterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnroosterActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbnroosterActionPerformed
+
+    private void btnAccessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccessActionPerformed
+        URL url;
+        URLConnection urlCon;
+        ImageIcon icon;
+        ImageIcon resizedIcon;
+        String email = txtemail.getText();
+        try {
+            // Hash the email address using MD5
+            String hash = MD5Util.md5Hex(email.toLowerCase());
+
+            // Construct the Gravatar URL
+            url = new URL("https://media.licdn.com/dms/image/C4E03AQFmPNfw4hL6xg/profile-displayphoto-shrink_800_800/0/1631584454672?e=2147483647&v=beta&t=lH0132bWEjsbcd3fAcjLOzsbBtVBlg4btMsHW_fUJcY");
+            urlCon = url.openConnection();
+
+            // Load the image and resize it
+            icon = new ImageIcon(url);
+            resizedIcon = new ImageIcon(icon.getImage().getScaledInstance(label2.getWidth(), label2.getHeight(), Image.SCALE_DEFAULT));
+
+            // Set the resized image as the icon for the label
+            label2.setIcon(resizedIcon);
+            label2.setText(null);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Internet connection problems");
+        }
+    }//GEN-LAST:event_btnAccessActionPerformed
 
     /**
      * @param args the command line arguments
@@ -684,7 +682,7 @@ public class WorkerView extends javax.swing.JFrame {
         for(String item: controller.getPositions()){
             this.cboPosition.addItem(item);
         }
-        //Tabla
+        //Table
         
     }
 }
