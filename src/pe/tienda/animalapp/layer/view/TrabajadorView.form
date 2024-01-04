@@ -8,9 +8,6 @@
     </Component>
     <Menu class="javax.swing.JMenuBar" name="mnuprincipal">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
             <EtchetBorder>
@@ -59,12 +56,13 @@
       <Color blue="ff" green="ff" red="ff" type="rgb"/>
     </Property>
     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-      <Color id="Cursor Por defecto"/>
+      <Color id="Default Cursor"/>
     </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="mnuprincipal"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -144,7 +142,7 @@
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder position="3" title="Datos del Animal">
+                <TitledBorder position="3" title="Animal Data">
                   <Font PropertyName="font" name="Consolas" size="10" style="0"/>
                   <Color PropertyName="color" blue="ff" green="66" red="33" type="rgb"/>
                 </TitledBorder>
@@ -222,7 +220,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="66" red="33" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Tipo"/>
+                <Property name="text" type="java.lang.String" value="Type"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="rbnvaca">
@@ -236,7 +234,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Consolas" size="11" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Vaca"/>
+                <Property name="text" type="java.lang.String" value="Cow"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbnvacaActionPerformed"/>
@@ -253,8 +251,11 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Consolas" size="11" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Caballo"/>
+                <Property name="text" type="java.lang.String" value="Horse"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbncaballoActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JRadioButton" name="rbngallina">
               <Properties>
@@ -267,8 +268,11 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Consolas" size="11" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Gallina"/>
+                <Property name="text" type="java.lang.String" value="Rooster"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbngallinaActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JRadioButton" name="rbnpollo">
               <Properties>
@@ -281,8 +285,11 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Consolas" size="11" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Pollo"/>
+                <Property name="text" type="java.lang.String" value="Chicken"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbnpolloActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lbltipo1">
               <Properties>
@@ -292,7 +299,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="66" red="33" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Cantidad"/>
+                <Property name="text" type="java.lang.String" value="Amount"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtCantidadAnimal">
@@ -305,7 +312,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="66" red="33" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Precio por Unidad"/>
+                <Property name="text" type="java.lang.String" value="Price/unit"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtPrecioUnidad">
@@ -319,7 +326,7 @@
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder position="3" title="Resumen">
+                <TitledBorder position="3" title="Summary">
                   <Font PropertyName="font" name="Consolas" size="10" style="0"/>
                   <Color PropertyName="color" blue="ff" green="66" red="33" type="rgb"/>
                 </TitledBorder>
@@ -362,11 +369,11 @@
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="6" rowCount="0">
-                        <Column editable="false" title="COMPRADOR" type="java.lang.String"/>
+                        <Column editable="false" title="BUYER" type="java.lang.String"/>
                         <Column editable="false" title="RUC" type="java.lang.String"/>
-                        <Column editable="false" title="VENDEDOR" type="java.lang.String"/>
+                        <Column editable="false" title="SELLER" type="java.lang.String"/>
                         <Column editable="false" title="ANIMAL" type="java.lang.String"/>
-                        <Column editable="false" title="CANTIDAD" type="java.lang.Integer"/>
+                        <Column editable="false" title="AMOUNT" type="java.lang.Integer"/>
                         <Column editable="false" title="TOTAL" type="java.lang.Double"/>
                       </Table>
                     </Property>
@@ -420,13 +427,16 @@
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder position="3" title="Datos Vendedor">
+                <TitledBorder position="3" title="Seller Data">
                   <Font PropertyName="font" name="Consolas" size="10" style="0"/>
                   <Color PropertyName="color" blue="ff" green="66" red="33" type="rgb"/>
                 </TitledBorder>
               </Border>
             </Property>
           </Properties>
+          <AccessibilityProperties>
+            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Seller Data"/>
+          </AccessibilityProperties>
 
           <Layout>
             <DimensionLayout dim="0">
@@ -448,12 +458,12 @@
                               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="cboCargo" min="-2" pref="136" max="-2" attributes="0"/>
-                                  <Component id="lbltipo5" min="-2" pref="39" max="-2" attributes="0"/>
                                   <Component id="lbltipo6" min="-2" pref="39" max="-2" attributes="0"/>
+                                  <Component id="lbltipo5" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="429" max="32767" attributes="0"/>
+                      <EmptySpace min="429" pref="285" max="32767" attributes="0"/>
                       <Component id="btnAgregar" min="-2" pref="87" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnFinaliza" min="-2" pref="96" max="-2" attributes="0"/>
@@ -497,6 +507,9 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JTextField" name="txtNombreVendedor">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreVendedorActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNombreComprador">
             </Component>
@@ -532,7 +545,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="66" red="33" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Nombre Trabajador"/>
+                <Property name="text" type="java.lang.String" value="Worker Name"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lbltipo4">
@@ -543,7 +556,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="66" red="33" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Nombre Comprador"/>
+                <Property name="text" type="java.lang.String" value="Buyer Name"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lbltipo5">
@@ -554,7 +567,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="66" red="33" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Cargo"/>
+                <Property name="text" type="java.lang.String" value="Position"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lbltipo6">
@@ -579,7 +592,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Agregar"/>
+                <Property name="text" type="java.lang.String" value="Add"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarActionPerformed"/>
@@ -596,7 +609,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Finalizar"/>
+                <Property name="text" type="java.lang.String" value="Submit"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFinalizaActionPerformed"/>
@@ -614,10 +627,10 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
-                      <Component id="txtTitulo" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="txtTitulo" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -640,7 +653,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="33" red="0" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Sistema Gestor de Venta de Animales"/>
+                <Property name="text" type="java.lang.String" value="Animal Sales Management System"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -652,7 +665,7 @@
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder position="3" title="Mi Perfil">
+                <TitledBorder position="3" title="My profile">
                   <Font PropertyName="font" name="Consolas" size="10" style="0"/>
                   <Color PropertyName="color" blue="ff" green="66" red="33" type="rgb"/>
                 </TitledBorder>
@@ -722,7 +735,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="66" red="33" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Correo"/>
+                <Property name="text" type="java.lang.String" value="E-Mail"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtemail">
@@ -735,7 +748,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Consolas" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Acceder"/>
+                <Property name="text" type="java.lang.String" value="Submit"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAccederActionPerformed"/>
