@@ -8,9 +8,6 @@
     </Component>
     <Menu class="javax.swing.JMenuBar" name="mnuprincipal">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
             <EtchetBorder>
@@ -35,22 +32,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="About"/>
           </Properties>
-          <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="mniCreditos">
-              <Properties>
-                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+A"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img/21422542.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Autor"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mniCreditosActionPerformed"/>
-              </Events>
-            </MenuItem>
-          </SubComponents>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenu2ActionPerformed"/>
+          </Events>
         </Menu>
       </SubComponents>
     </Menu>
@@ -313,7 +297,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="66" red="33" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Price By Unit"/>
+                <Property name="text" type="java.lang.String" value="Price/Unit"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtUnitPrice">
@@ -683,7 +667,7 @@
                           <Component id="lbltype7" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
                           <Component id="txtemail" alignment="0" min="-2" pref="159" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="35" max="32767" attributes="0"/>
+                      <EmptySpace pref="49" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jSeparator2" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">

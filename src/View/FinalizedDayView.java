@@ -9,6 +9,9 @@ import java.util.GregorianCalendar;
 import java.util.Map;
 import javax.swing.table.DefaultTableModel;
 import Controller.AnimalController;
+import Model.Transaction;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 
 public class FinalizedDayView extends javax.swing.JDialog {
@@ -237,6 +240,7 @@ public class FinalizedDayView extends javax.swing.JDialog {
             }
         });
     }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -250,14 +254,31 @@ public class FinalizedDayView extends javax.swing.JDialog {
     private javax.swing.JLabel txtTitle;
     // End of variables declaration//GEN-END:variables
 
+
     private void initContent() {
+        Transaction trans = new Transaction();
+        ResultSet data = trans.getTransaction();
+        try {
+            while (data.next()) {
+                String animalType = data.getString("animalName");
+                int quantity = data.getInt("quantity");
+                
+                AnimalController animalController = new AnimalController();
+                animalController.process(animalType, quantity);
+            }
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+        }
+
         Map<String, Double> rspns;
         Map<String, Integer> rspns2;
         GregorianCalendar calendario = new GregorianCalendar();
         SimpleDateFormat dateformat = new SimpleDateFormat("dd-MMMM-yyyy"); 
         AnimalController Ani= new AnimalController();
+        
         rspns=Ani.processClosingMoney();
         rspns2=Ani.processClosingAnimals();
+        
         Object[] rowDataMoney={ dateformat.format(calendario.getTime()).toString(), rspns.get("Cow"),rspns.get("Horse"),rspns.get("Rooster"), rspns.get("Chicken"), rspns.get("Total")};
         Object[] rowDataAnimals={ dateformat.format(calendario.getTime()).toString(), rspns2.get("Cow"),rspns2.get("Horse"),rspns2.get("Rooster"), rspns2.get("Chicken"), rspns2.get("Total")};
         DefaultTableModel tableMoney;

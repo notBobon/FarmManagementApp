@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package MainApp;
+
+import Helper.Database;
 import View.WorkerView;
 
 public class MainClass {
@@ -14,5 +16,6 @@ public class MainClass {
     public static void main(String[] args) {
         // TODO application logic here
         WorkerView.main(null);
+        Database db = new Database();
     }
 }

@@ -14,6 +14,9 @@ import javax.swing.table.DefaultTableModel;
 import Controller.AnimalController;
 import Controller.EmployeeController;
 import Helper.MD5Util;
+import Model.Transaction;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  *
@@ -27,6 +30,7 @@ public class WorkerView extends javax.swing.JFrame {
     public WorkerView() {
         initComponents();
         initControls();
+        initOverview();
     }
 
     /**
@@ -77,7 +81,6 @@ public class WorkerView extends javax.swing.JFrame {
         mnuprincipal = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
-        mniCreditos = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Farm Sales Management System");
@@ -135,7 +138,7 @@ public class WorkerView extends javax.swing.JFrame {
 
         lbltype2.setFont(new java.awt.Font("Consolas", 1, 11)); // NOI18N
         lbltype2.setForeground(new java.awt.Color(51, 102, 0));
-        lbltype2.setText("Price By Unit");
+        lbltype2.setText("Price/Unit");
 
         javax.swing.GroupLayout txtCantidadLayout = new javax.swing.GroupLayout(txtCantidad);
         txtCantidad.setLayout(txtCantidadLayout);
@@ -391,7 +394,7 @@ public class WorkerView extends javax.swing.JFrame {
                     .addComponent(btnAccess)
                     .addComponent(lbltype7, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -454,7 +457,6 @@ public class WorkerView extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        mnuprincipal.setBackground(new java.awt.Color(255, 255, 255));
         mnuprincipal.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.white, null));
         mnuprincipal.setForeground(new java.awt.Color(255, 255, 255));
         mnuprincipal.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
@@ -463,17 +465,11 @@ public class WorkerView extends javax.swing.JFrame {
         mnuprincipal.add(jMenu1);
 
         jMenu2.setText("About");
-
-        mniCreditos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
-        mniCreditos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/21422542.png"))); // NOI18N
-        mniCreditos.setText("Autor");
-        mniCreditos.addActionListener(new java.awt.event.ActionListener() {
+        jMenu2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mniCreditosActionPerformed(evt);
+                jMenu2ActionPerformed(evt);
             }
         });
-        jMenu2.add(mniCreditos);
-
         mnuprincipal.add(jMenu2);
 
         setJMenuBar(mnuprincipal);
@@ -519,7 +515,11 @@ public class WorkerView extends javax.swing.JFrame {
             AnimalController animalController = new AnimalController();
             animalResponse = animalController.process(animalType, quantity);
             //Show
+            Transaction trans = new Transaction();
+            trans.setTransaction(buyerName, sellerName, taxID, animalType, quantity, animalResponse.get("Total"));
+            trans.addTransaction();
             Object[] rowData = {buyerName, taxID, sellerName, animalType, quantity, animalResponse.get("Total")};
+
             table = (DefaultTableModel) this.tblData.getModel();
             table.addRow(rowData);
         } catch (Exception e) {
@@ -539,17 +539,6 @@ public class WorkerView extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_btnCompleteActionPerformed
-
-    private void mniCreditosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniCreditosActionPerformed
-        // TODO add your handling code here:
-        try {
-            
-            CreditsView credit=new CreditsView(null, true);
-            credit.setVisible(true);
-        }catch (Exception e) {
-            //JOptionPane.showMessageDialog(this, "Error loading image.");
-        }
-    }//GEN-LAST:event_mniCreditosActionPerformed
 
     private void rbnchickenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnchickenActionPerformed
         // TODO add your handling code here:
@@ -584,6 +573,17 @@ public class WorkerView extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Internet connection problems");
         }
     }//GEN-LAST:event_btnAccessActionPerformed
+
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+        // TODO add your handling code here:
+        try {
+
+            CreditsView credit=new CreditsView(null, true);
+            credit.setVisible(true);
+        }catch (Exception e) {
+            //JOptionPane.showMessageDialog(this, "Error loading image.");
+        }
+    }//GEN-LAST:event_jMenu2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -652,7 +652,6 @@ public class WorkerView extends javax.swing.JFrame {
     private javax.swing.JLabel lbltype5;
     private javax.swing.JLabel lbltype6;
     private javax.swing.JLabel lbltype7;
-    private javax.swing.JMenuItem mniCreditos;
     private javax.swing.JMenuBar mnuprincipal;
     private javax.swing.JPanel pnlPrincipal;
     private javax.swing.JRadioButton rbnchicken;
@@ -684,5 +683,32 @@ public class WorkerView extends javax.swing.JFrame {
         }
         //Table
         
+    }
+    private void initOverview() {
+
+        Transaction trans = new Transaction();
+        try {
+            ResultSet data = trans.getTransaction();
+            while (data.next()) {
+                String buyerName = data.getString("buyerName");
+                String taxID = data.getString("taxID");
+                String sellerName = data.getString("sellerName");
+                String animalType = data.getString("animalName");
+                int quantity = data.getInt("quantity");
+                double total = data.getDouble("total");
+                
+                AnimalController animalController = new AnimalController();
+                animalController.process(animalType, quantity);
+                // If you want to store the data in an array
+                Object[] rowData = {buyerName, taxID, sellerName, animalType, quantity, total};
+
+                // Further processing with rowData, if needed
+                table = (DefaultTableModel) this.tblData.getModel();
+                table.addRow(rowData);
+            }
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+        }
+
     }
 }

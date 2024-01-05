@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 public class DatabaseConnector {
     private static final String JDBC_URL = "jdbc:mysql://localhost:3307/fsms";
-    private static final String USERNAME = "admin";
+    private static final String USERNAME = "root";
     private static final String PASSWORD = "password";
 
     public static Connection connect() throws SQLException {

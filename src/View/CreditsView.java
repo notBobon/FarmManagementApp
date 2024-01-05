@@ -27,7 +27,6 @@ public class CreditsView extends javax.swing.JDialog {
         txtTitulo = new javax.swing.JLabel();
         txtTitulo1 = new javax.swing.JLabel();
         txtTitulo2 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -42,11 +41,6 @@ public class CreditsView extends javax.swing.JDialog {
         txtTitulo2.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         txtTitulo2.setText("Farm Sales Management System");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/2142254 (1).png"))); // NOI18N
-        jLabel2.setMaximumSize(new java.awt.Dimension(100, 100));
-        jLabel2.setMinimumSize(new java.awt.Dimension(100, 100));
-        jLabel2.setPreferredSize(new java.awt.Dimension(100, 100));
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -59,9 +53,6 @@ public class CreditsView extends javax.swing.JDialog {
                             .addComponent(txtTitulo)
                             .addComponent(txtTitulo1)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(53, 53, 53)
                         .addComponent(txtTitulo2)))
                 .addContainerGap(51, Short.MAX_VALUE))
@@ -69,9 +60,7 @@ public class CreditsView extends javax.swing.JDialog {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(137, 137, 137)
                 .addComponent(txtTitulo2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTitulo1)
@@ -138,7 +127,6 @@ public class CreditsView extends javax.swing.JDialog {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel txtTitulo;
     private javax.swing.JLabel txtTitulo1;

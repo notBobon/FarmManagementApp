@@ -58,7 +58,10 @@ public class AnimalController {
                 break;
         }
        //Process
+       if (animal != null){
+           
         totalSales.put("Total", animal.calculateTotal(quantity));
+       }
         return totalSales;
     }
     
