@@ -13,8 +13,12 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import Controller.AnimalController;
 import Controller.EmployeeController;
+import Helper.Database;
 import Helper.MD5Util;
 import Model.Transaction;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -555,22 +559,56 @@ public class WorkerView extends javax.swing.JFrame {
         ImageIcon resizedIcon;
         String email = txtemail.getText();
         try {
-            // Hash the email address using MD5
-            String hash = MD5Util.md5Hex(email.toLowerCase());
+            // Check if the email exists
+            if (emailExistsInDatabase(email)) {
+                // If the email exists, retrieve the corresponding URL
+                String imageUrl = getEmailImageUrlFromDatabase(email);
 
-            // Construct the Gravatar URL
-            url = new URL("https://media.licdn.com/dms/image/C4E03AQFmPNfw4hL6xg/profile-displayphoto-shrink_800_800/0/1631584454672?e=2147483647&v=beta&t=lH0132bWEjsbcd3fAcjLOzsbBtVBlg4btMsHW_fUJcY");
-            urlCon = url.openConnection();
+                // Construct the URL
+                url = new URL(imageUrl);
+                urlCon = url.openConnection();
 
-            // Load the image and resize it
-            icon = new ImageIcon(url);
-            resizedIcon = new ImageIcon(icon.getImage().getScaledInstance(label2.getWidth(), label2.getHeight(), Image.SCALE_DEFAULT));
+                // Load the image and resize it
+                icon = new ImageIcon(url);
+                resizedIcon = new ImageIcon(icon.getImage().getScaledInstance(label2.getWidth(), label2.getHeight(), Image.SCALE_DEFAULT));
 
-            // Set the resized image as the icon for the label
-            label2.setIcon(resizedIcon);
-            label2.setText(null);
+                // Set the resized image as the icon for the label
+                label2.setIcon(resizedIcon);
+                label2.setText(null);
+            } else {
+                // Handle the case where the email doesn't exist in the database
+                JOptionPane.showMessageDialog(this, "Email not found in the database");
+            }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Internet connection problems");
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+        }
+    }
+        private boolean emailExistsInDatabase(String email) throws SQLException {
+        String query = "SELECT COUNT(*) FROM employee WHERE email = ?";
+        String DB_URL = "jdbc:mysql://localhost:3307/fsms";
+        String DB_USER = "admin";
+        String DB_PASS = "password";
+        Connection CONN = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS); 
+        try (PreparedStatement preparedStatement = CONN.prepareStatement(query)) {
+            preparedStatement.setString(1, email);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            return resultSet.getInt(1) > 0;
+        }
+    }
+
+    private String getEmailImageUrlFromDatabase(String email) throws SQLException {
+        String query = "SELECT image_url FROM employee WHERE email = ?";
+        String DB_URL = "jdbc:mysql://localhost:3307/fsms";
+        String DB_USER = "admin";
+        String DB_PASS = "password";
+        Connection CONN = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS); 
+        try (PreparedStatement preparedStatement = CONN.prepareStatement(query)) {
+            preparedStatement.setString(1, email);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            return resultSet.getString("image_url");
         }
     }//GEN-LAST:event_btnAccessActionPerformed
 
@@ -581,7 +619,7 @@ public class WorkerView extends javax.swing.JFrame {
             CreditsView credit=new CreditsView(null, true);
             credit.setVisible(true);
         }catch (Exception e) {
-            //JOptionPane.showMessageDialog(this, "Error loading image.");
+            JOptionPane.showMessageDialog(this, "Error loading image.");
         }
     }//GEN-LAST:event_jMenu2ActionPerformed
 
@@ -711,4 +749,5 @@ public class WorkerView extends javax.swing.JFrame {
         }
 
     }
+    
 }

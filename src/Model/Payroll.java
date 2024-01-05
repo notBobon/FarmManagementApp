@@ -11,8 +11,6 @@ public class Payroll {
         double bonus = 0.0;
         if (worker instanceof Employee) {
             bonus = worker.getSalary();
-        } else if (worker instanceof Teacher) {
-            bonus = worker.getSalary() * 0.60;
         }
         return bonus;
     }

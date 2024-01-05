@@ -7,14 +7,12 @@ package Controller;
 
 import java.util.HashMap;
 import java.util.Map;
-import Model.Teacher;
 import Model.Employee;
 import Model.IWorker;
 import Model.Payroll;
 
 public class EmployeeController {
     public static final String EMPLOYEE_TYPE = "EMPLOYEE";
-    public static final String TEACHER_TYPE = "TEACHER";
     
     public String[] getPositions(){
         String[] positions = {IWorker.SALES_EMPLOYEE_POSITION, IWorker.SALES_MANAGER_POSITION, IWorker.SALES_ASSISTANT_POSITION};
@@ -26,11 +24,7 @@ public class EmployeeController {
         //Worker
         Payroll payroll = new Payroll();
         IWorker worker;
-        if(type.equals(TEACHER_TYPE)){
-            worker = new Teacher(hours);
-        }else{
-            worker = new Employee(position);
-        }
+        worker = new Employee(position);
         //Process
         result.put("Salary", worker.getSalary());
         result.put("Bonus", payroll.calculateBonus(worker));
